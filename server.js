@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+
 app.get('/',function(req,res){
 		res.send('Hello to the todos');
 });
