@@ -8,7 +8,7 @@ let Todo = require('./model');
 let app = express();
 let port = process.env.PORT || 8081;
 
-mongoose.connect('mongodb://1234:1234@ds149998.mlab.com:49998/redux-app');
+mongoose.connect('mongodb://bbier:bbier@ds149998.mlab.com:49998/redux-app');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
