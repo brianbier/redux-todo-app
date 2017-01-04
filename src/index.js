@@ -3,21 +3,23 @@ import {render} from 'react-dom';
 
 // import App from './components/App';
 import Form from './components/Form';
-import Todo from './components/Todo';
 import TodoList from './components/TodoList';
 
 import App from './components/App';
-import {Router,Route,IndexRoute,browserHistory} from 'react-router';
+import {Router,Route,IndexRoute} from 'react-router';
 
 //Provider exxposes our store to our application and other components
 import {Provider} from 'react-redux';
 
+//Use the store
+import store, {history} from './store';
+
 const router = (
-  <Provider>
-    <Router history={browserHistory}>
+  <Provider store={store}> 
+    <Router history={history}>
       <Route path="/" components={App}>
         <IndexRoute components={Form}/>
-        <Route path="/todo" components={Todo}/>
+        <Route path="/todo" components={TodoList}/>
       </Route>
     </Router>
   </Provider>
