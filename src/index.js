@@ -4,17 +4,20 @@ import {render} from 'react-dom';
 
 // import components
 import Main from './components/Main';
-import TodoList from './components/TodoList';
 import FormContainer from './container/FormContainer';
 
-import {Router, Route, IndexRoute, browserHistory} from 'react-router';
+import {Router, Route, IndexRoute} from 'react-router';
+import { Provider } from 'react-redux';
+import store, {history} from './store';
 
 const router = (
-    <Router history={browserHistory}>
-      <Route path="/" components={Main}>
-        <IndexRoute components={FormContainer}/>
-      </Route>
-    </Router>
+    <Provider store={store}>
+      <Router history={history}>
+        <Route path="/" components={Main}>
+          <IndexRoute components={FormContainer}/>
+        </Route>
+      </Router>
+    </Provider>
 )
 
 render(router,document.getElementById('root'));

@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
-import Tasks from './Tasks'
+import tasks from './Tasks'
 
-const rootReducer = combineReducers({tasks: Tasks,routing: routerReducer});
+const rootReducer = combineReducers({tasks,routing: routerReducer});
 
 export default rootReducer;
+
