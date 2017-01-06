@@ -2,8 +2,9 @@ import React from 'react';
 
 class Todo extends React.Component{
   render(){
+  	const {task} = this.props
     return(
-      <p>I am a Todo Task</p>
+      <li>{task.text}</li>
     )
   }
 }

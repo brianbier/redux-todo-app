@@ -2,20 +2,21 @@ import React from 'react';
 // import {connect} from 'react-redux';
 
 class FormContainer extends React.Component{
-  // constructor(props){
-  //   super(props)
-  //   this.handleSubmit = this.handleSubmit.bind(this)
-  // }
-  // handleSubmit(e){
-  //   e.preventDefault();
-  //   const todo = this.refs.value;
-  //   // dispatch(addTodo(todo));
-  //   this.refs.TodoForm.reset();
-  // }
+  constructor(props){
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handleSubmit(e){
+    e.preventDefault();
+    console.log(this.refs)
+    const todo = this.refs.text.value;
+    this.props.addTodo(todo);
+    this.refs.TodoForm.reset();
+  }
   render(){
     return(
       <div>
-        <form ref="TodoForm">
+        <form onSubmit={this.handleSubmit} ref="TodoForm">
         <input type="text" ref="text" placeholder="Type your task"/>
         <input type="submit"/>
         </form>

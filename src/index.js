@@ -3,7 +3,7 @@ import React from 'react';
 import {render} from 'react-dom';
 
 // import components
-import Main from './components/Main';
+import App from './components/App';
 import FormContainer from './container/FormContainer';
 
 import {Router, Route, IndexRoute} from 'react-router';
@@ -13,7 +13,7 @@ import store, {history} from './store';
 const router = (
     <Provider store={store}>
       <Router history={history}>
-        <Route path="/" components={Main}>
+        <Route path="/" components={App}>
           <IndexRoute components={FormContainer}/>
         </Route>
       </Router>

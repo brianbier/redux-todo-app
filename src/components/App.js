@@ -3,17 +3,20 @@ import {connect} from 'react-redux';
 import Main from './Main';
 import * as actionCreators from '../actions/actionCreators';
 
-// function mapStateToProps(state){
-//   return {
-//     tasks: state.tasks,
-//   }
-// }
+//This maps whatever lives in our state to this.props.tasks
+function mapStateToProps(state){
+  return {
+    tasks: state.tasks,
+  }
+}
 
-// function mapDispatchToProps(dispatch){
-//   return bindActionCreators(actionCreators, dispatch)
-// }
+// manually pass the action creators via props and use it throught the app, we pass all actions and the dispatch
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators(actionCreators, dispatch)
+}
 
 
-const App = connect()(Main)
+const App = connect(mapStateToProps,mapDispatchToProps)(Main)
 
 export default App;
