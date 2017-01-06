@@ -4,11 +4,6 @@ import React from 'react';
 import FormContainer from '../container/FormContainer';
 
 class Form extends React.Component{
-  handleSubmit(e){
-    e.preventDefault();
-    console.log('I am handling submit')
-   
-  }
   render(){
     return(
       <div>

@@ -21,6 +21,12 @@ function tasks(state=[],action){
 		  	...state,
 		  	todo(undefined,action)
 		  ]
+    case 'REMOVE_TODO':
+    
+      return [
+      ...state.slice(0,action.id),
+      ...state.slice(action.id+1)
+      ]
 		 default:
 		 	return state
 	}

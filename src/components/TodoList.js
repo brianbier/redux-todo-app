@@ -5,7 +5,9 @@ class TodoList extends React.Component{
   render(){
     return(
       <ul>
-      {this.props.data.map((task,index)=><Todo {...this.props} key={index} task={task} />)}
+      {this.props.tasks.map((task,index)=>
+        <Todo {...this.props} key={index} i={index} task={task} />
+      )}
       </ul>
     )
   }

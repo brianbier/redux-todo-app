@@ -10,7 +10,7 @@ class Main extends React.Component{
       <div>
       <h1><Link to="/">Todo's Today</Link></h1>
       {React.cloneElement(this.props.children,this.props)}
-      <TodoList data={data} />
+      <TodoList {...this.props} />
       </div>
     )
   }
