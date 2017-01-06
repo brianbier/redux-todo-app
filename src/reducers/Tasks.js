@@ -11,8 +11,6 @@ function tasks(state=[],action){
 // 		 default:
 // 		 	return state
 // 	}
-console.log(state,action);
-return state;
 }
 
 export default tasks;
