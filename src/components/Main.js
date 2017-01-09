@@ -3,9 +3,11 @@ import { Link } from 'react-router';
 import TodoList from './TodoList';
 
 class Main extends React.Component{
-  
+  componentDidMount(){
+    console.log('I am about to mount');
+    this.props.fetchPosts()
+  }
   render(){
-  	const data = this.props.tasks;
     return(
       <div>
       <h1><Link to="/">Todo's Today</Link></h1>

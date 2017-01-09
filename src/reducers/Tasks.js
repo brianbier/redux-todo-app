@@ -27,6 +27,8 @@ function tasks(state=[],action){
       ...state.slice(0,action.id),
       ...state.slice(action.id+1)
       ]
+    case 'RECEIVE_TODOS':
+      return Object.assign([],state,action.tasks)
 		 default:
 		 	return state
 	}
