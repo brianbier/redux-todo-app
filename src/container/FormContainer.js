@@ -9,7 +9,8 @@ class FormContainer extends React.Component{
   handleSubmit(e){
     e.preventDefault();
     const todo = this.refs.text.value;
-    this.props.addTodo(todo);
+    // this.props.addTodo(todo);
+    this.props.postData(todo);
     this.refs.TodoForm.reset();
   }
   render(){
