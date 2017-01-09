@@ -28,7 +28,11 @@ function tasks(state=[],action){
       ...state.slice(action.id+1)
       ]
     case 'RECEIVE_TODOS':
-      return Object.assign([],state,action.tasks)
+      var task = []
+      action.tasks.map(function(obj){
+        return task.push({text: obj})
+      })
+      return task
 		 default:
 		 	return state
 	}

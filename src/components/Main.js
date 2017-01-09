@@ -4,8 +4,7 @@ import TodoList from './TodoList';
 
 class Main extends React.Component{
   componentDidMount(){
-    console.log('I am about to mount');
-    this.props.fetchPosts()
+    this.props.fetchData();
   }
   render(){
     return(
